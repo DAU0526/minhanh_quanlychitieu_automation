@@ -1,0 +1,6 @@
+NAME_INPUT = "id=name"
+AMOUNT_INPUT = "id=amount"
+TYPE_DROPDOWN = "id=type"
+CATEGORY_DROPDOWN = "id=category"
+SAVE_BUTTON = "id=save"
+DELETE_BUTTON = "id=delete"
