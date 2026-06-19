@@ -6,19 +6,19 @@ Library    SeleniumLibrary
 Open Login Page
     Open Browser    ${URL}    ${BROWSER}
 
-Input Username
-    [Arguments]    ${username}
-    Log    Input username
+Input Email
+    [Arguments]    ${email}
+    Input Text    ${EMAIL_INPUT}    ${email}
 
 Input Password
     [Arguments]    ${password}
-    Log    Input password
+    Input Text    ${PASSWORD_INPUT}    ${password}
 
 Click Login
-    Log    Click login
+    Click Button    ${LOGIN_BUTTON}
 
 Login System
-    [Arguments]    ${username}    ${password}
-    Input Username    ${username}
+    [Arguments]    ${email}    ${password}
+    Input Email    ${email}
     Input Password    ${password}
     Click Login
