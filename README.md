@@ -1,25 +1,67 @@
-# Expense Management Automation Testing
+# Kiểm Thử Tự Động Hệ Thống Quản Lý Chi Tiêu
 
-## Project Overview
+## Giới thiệu dự án
 
-Automation Testing for Expense Management System.
+Dự án kiểm thử tự động cho hệ thống Quản lý Chi tiêu cá nhân, được xây dựng trong quá trình thực tập QC Automation.
 
-## Technologies
+Mục tiêu của dự án là áp dụng Robot Framework và SeleniumLibrary để thực hiện kiểm thử tự động các chức năng chính của hệ thống.
 
-- Robot Framework
-- SeleniumLibrary
-- Python
+## Công nghệ sử dụng
 
-## Design Pattern
+* Robot Framework
+* SeleniumLibrary
+* Python
+* GitHub
 
-- Page Object Model (POM)
+## Mô hình thiết kế
 
-## Modules
+Dự án được tổ chức theo mô hình **Page Object Model (POM)** nhằm tăng khả năng tái sử dụng mã nguồn, dễ bảo trì và mở rộng các kịch bản kiểm thử.
 
-- Login
-- Dashboard
-- Transaction
+## Các chức năng được kiểm thử
 
-## Run Test
+### Đăng nhập
+
+* Đăng nhập thành công
+* Đăng nhập thất bại
+* Kiểm tra dữ liệu đầu vào
+
+### Bảng điều khiển (Dashboard)
+
+* Kiểm tra số dư hiện tại
+* Kiểm tra tổng thu nhập
+* Kiểm tra tổng chi tiêu
+
+### Quản lý giao dịch
+
+* Thêm giao dịch thu
+* Thêm giao dịch chi
+* Xóa giao dịch
+* Kiểm tra lịch sử giao dịch
+
+## Cấu trúc thư mục
+
+resources/
+
+* locators/
+* page_objects/
+* common_keywords.resource
+* environment_variables.yml
+
+tests/
+
+* LoginTests.robot
+* DashboardTests.robot
+* TransactionTests.robot
+
+results/
+
+## Cách chạy dự án
+
+Cài đặt thư viện:
+
+pip install -r requirements.txt
+
+Thực thi toàn bộ test:
 
 robot tests/
+
