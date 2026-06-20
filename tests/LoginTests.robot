@@ -31,5 +31,5 @@ Login Successfully    ${EMPTY}    ${EMPTY}
 Verify Required Email Message
 
 TC_06 Open Register Page
-[Documentation]    Kiểm tra chuyển hướng sang trang đăng ký
+[Documentation]    Kiểm tra mở trang đăng ký
 Click Element    ${REGISTER_LINK}
