@@ -25,7 +25,7 @@ Input Password    ${password}
 Click Login
 
 Verify Login Success
-Wait Until Page Contains Element    ${LOGIN_BUTTON}    timeout=5s
+Wait Until Page Does Not Contain Element    ${LOGIN_BUTTON}    timeout=5s
 
 Verify Login Failed
 Page Should Contain    Sai
