@@ -38,3 +38,4 @@ Element Should Be Visible    ${PASSWORD_INPUT}
 
 Close Application
 Close Browser
+  
