@@ -1,7 +1,7 @@
 *** Settings ***
 Resource    ../resources/page_objects/LoginPage.resource
 
-Test Setup       Open Login Page
+Test Setup    Open Login Page
 Test Teardown    Close Application
 
 *** Test Cases ***
