@@ -8,7 +8,7 @@
 
 Đây là dự án kiểm thử tự động cho hệ thống **Quản lý chi tiêu cá nhân (Expense Management System)** được thực hiện trong quá trình thực tập QA Automation.
 
-Dự án áp dụng Robot Framework kết hợp SeleniumLibrary để tự động hóa việc kiểm thử giao diện người dùng (UI Testing), giúp giảm thời gian kiểm thử thủ công, nâng cao hiệu quả kiểm thử và đảm bảo chất lượng phần mềm.
+Dự án sử dụng Robot Framework kết hợp SeleniumLibrary để tự động hóa việc kiểm thử giao diện người dùng (UI Testing), giúp giảm thời gian kiểm thử thủ công và nâng cao chất lượng phần mềm.
 
 ## Objectives
 
@@ -18,8 +18,7 @@ Dự án áp dụng Robot Framework kết hợp SeleniumLibrary để tự độ
 * Regression Testing
 * Test Report Generation
 * Áp dụng mô hình Page Object Model (POM)
-* Tái sử dụng keyword (Reusable Keywords)
-* Quản lý cấu hình bằng Config File
+* Tái sử dụng kiểm thử bằng Reusable Keywords
 
 ---
 
@@ -88,6 +87,9 @@ pip install -r requirements.txt
 minhanh_quanlychitieu_automation
 
 │
+├── docs
+│   └── TestCases.md
+│
 ├── tests
 │   ├── LoginTests.robot
 │   ├── DashboardTests.robot
@@ -114,6 +116,8 @@ minhanh_quanlychitieu_automation
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
+
 ---
 
 # Automation Architecture
@@ -178,6 +182,7 @@ tests/DashboardTests.robot
 | TC_DASHBOARD_05 | Verify Statistics Tab  |
 | TC_DASHBOARD_06 | Verify Transaction Tab |
 | TC_DASHBOARD_07 | Verify Logout Button   |
+| TC_DASHBOARD_08 | Verify Scroll Function |
 
 ---
 
@@ -204,15 +209,27 @@ tests/TransactionTests.robot
 
 ---
 
+# Test Case Documentation
+
+File:
+
+```text
+docs/TestCases.md
+```
+
+Tài liệu này mô tả chi tiết các test case, mục tiêu kiểm thử và kết quả mong đợi của từng chức năng trong hệ thống.
+
+---
+
 # Total Test Cases
 
 ```text
 Login Tests        : 6
-Dashboard Tests    : 7
+Dashboard Tests    : 8
 Transaction Tests  : 8
 
 ===================
-Total: 21 Test Cases
+Total: 22 Test Cases
 ===================
 ```
 
@@ -248,7 +265,7 @@ robot tests/TransactionTests.robot
 
 # Test Report
 
-Sau khi thực thi kiểm thử, Robot Framework sẽ sinh ra các file báo cáo:
+Sau khi thực thi kiểm thử, Robot Framework sẽ tự động sinh báo cáo:
 
 ```text
 output.xml
@@ -260,6 +277,36 @@ Mở báo cáo:
 
 ```bash
 start report.html
+```
+
+---
+
+# Reusable Keywords
+
+Framework sử dụng các reusable keywords để tái sử dụng các thao tác chung:
+
+* Login With Valid Account
+* Open Login Page
+* Close Application
+* Scroll To Bottom
+* Scroll To Top
+
+Điều này giúp giảm trùng lặp mã nguồn và tăng khả năng bảo trì framework.
+
+---
+
+# JavaScript Usage
+
+Framework sử dụng SeleniumLibrary kết hợp JavaScript để thực hiện một số thao tác trên giao diện:
+
+Ví dụ:
+
+```robot
+Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+```
+
+```robot
+Execute Javascript    window.scrollTo(0,0)
 ```
 
 ---
@@ -281,19 +328,9 @@ LOGIN_BUTTON = "xpath=//button[contains(text(),'Đăng nhập')]"
 Chứa các keyword thao tác với giao diện:
 
 * Input dữ liệu
-* Click Button
+* Click button
 * Điều hướng trang
 * Validation
-
-## Reusable Keyword Layer
-
-Chứa các keyword dùng chung nhằm tăng khả năng tái sử dụng và giảm trùng lặp code.
-
-Ví dụ:
-
-```robot
-Login With Valid Account
-```
 
 ## Test Layer
 
@@ -302,15 +339,15 @@ Chứa các kịch bản kiểm thử nghiệp vụ.
 Ví dụ:
 
 ```robot
-Login With Valid Account
+Login Successfully
 Verify Welcome Message
 ```
 
 ---
 
-# Configuration File
+# Environment Configuration
 
-Dự án sử dụng file cấu hình:
+File:
 
 ```text
 resources/environment_variables.yml
@@ -320,11 +357,11 @@ Ví dụ:
 
 ```yaml
 BASE_URL: http://localhost:5173
+
 EMAIL: minhanh1@gmail.com
+
 PASSWORD: 12345678
 ```
-
-Giúp quản lý dữ liệu cấu hình tập trung và dễ bảo trì.
 
 ---
 

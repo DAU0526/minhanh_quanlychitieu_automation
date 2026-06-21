@@ -24,6 +24,7 @@
 | TC_DASHBOARD_05 | Verify statistics tab  | Statistics tab displayed  |
 | TC_DASHBOARD_06 | Verify transaction tab | Transaction tab displayed |
 | TC_DASHBOARD_07 | Verify logout button   | Logout button displayed   |
+| TC_DASHBOARD_08 | Verify Scroll Function | Page scrolls successfully |
 
 ---
 
@@ -42,4 +43,4 @@
 
 ---
 
-Total Test Cases: 21
+Total Test Cases: 22
