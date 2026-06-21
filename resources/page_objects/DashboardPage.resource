@@ -1,16 +1,26 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables    ../locators/DashboardPageLocators.py
 
 *** Keywords ***
 
-Verify Dashboard Displayed
-    Log    Dashboard displayed
+Verify Welcome Message
+    Element Should Be Visible    ${WELCOME_TEXT}
 
-Verify Current Balance
-    Log    Verify balance
+Verify Balance Card
+    Element Should Be Visible    ${BALANCE_CARD}
 
-Verify Total Income
-    Log    Verify income
+Verify Income Card
+    Element Should Be Visible    ${INCOME_CARD}
 
-Verify Total Expense
-    Log    Verify expense
+Verify Expense Card
+    Element Should Be Visible    ${EXPENSE_CARD}
+
+Verify Statistics Tab
+    Element Should Be Visible    ${STATISTICS_TAB}
+
+Verify Transaction Tab
+    Element Should Be Visible    ${TRANSACTION_TAB}
+
+Verify Logout Button
+    Element Should Be Visible    ${LOGOUT_BUTTON}
