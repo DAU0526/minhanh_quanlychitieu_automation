@@ -23,6 +23,7 @@ Login Successfully
     Input Email    ${email}
     Input Password    ${password}
     Click Login
+    Sleep    5s
 
 Verify Login Success
     Wait Until Page Does Not Contain Element    ${LOGIN_BUTTON}    timeout=5s
