@@ -33,3 +33,4 @@ TC_05 Login With Empty Email And Password
 TC_06 Open Register Page
     [Documentation]    Kiểm tra mở trang đăng ký
     Click Element    ${REGISTER_LINK}
+    
