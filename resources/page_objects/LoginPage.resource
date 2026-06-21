@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Variables    ../../environment_variables.yml
+Variables    ../environment_variables.yml
 Variables    ../locators/LoginPageLocators.py
 
 *** Keywords ***

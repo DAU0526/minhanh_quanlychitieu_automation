@@ -1,10 +1,7 @@
 *** Settings ***
-Library    SeleniumLibrary
+Resource    page_objects/LoginPage.resource
 
 *** Keywords ***
 
-Open Application
-    Open Browser    ${URL}    ${BROWSER}
-
-Close Application
-    Close Browser
+Login With Valid Account
+    Login Successfully    ${EMAIL}    ${PASSWORD}
