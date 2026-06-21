@@ -35,3 +35,9 @@ TC_DASHBOARD_06 Verify Transaction Tab
 TC_DASHBOARD_07 Verify Logout Button
     Login With Valid Account
     Verify Logout Button
+
+TC_DASHBOARD_08 Verify Scroll Function
+    Login With Valid Account
+    Scroll To Bottom
+    Sleep    2s
+    Scroll To Top
